@@ -1,14 +1,15 @@
 import React from 'react';
 import Video from './video';
+import styles from './videos.module.css';
 
 const Videos = (props) => {
     return (
-        <ul className="thumbnailContainer">
+        <ul className={styles.videos}>
             {
-                props.video.map(item=> {
+                props.videos.map(video=> {
                     return <Video
-                    video={item}
-                    key={item.id}/>
+                    video={video}
+                    key={video.id}/>
                 })
             }
         </ul>
