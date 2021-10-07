@@ -1,44 +1,43 @@
-* {
-  box-sizing: border-box;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   background-color: black;
-  padding: 1rem 0.8em;
+  padding: 1rem 1.5em;
   font-size: 1rem;
   width: 100%;
 }
 
-.navbar-title {
+.navbarTitle {
   display: inline-block;
   line-height: 2rem;
   font-size: 2rem;
 }
 
-.navbar-title-name {
+.navbarTitleName {
   color: white;
+  vertical-align: middle;
 }
 
-.navbar-title-icon {
-  color: red;
+.navbarTitleIcon {
   margin-right: 0.3em;
-  background-color: white;
+  width: 2.5rem;
+  vertical-align: middle;
 }
 
-.navbar-search {
+.navbarSearch {
   font-size: 1.5rem;
   width: 50vw;
+  line-height: 2.3rem;
 }
 
-.navbar-search-input {
+.navbarSearchInput {
   display: inline-block;
   padding: 0.5em 1em !important;
   width: 80%;
+  outline: 0;
 }
 
-.navbar-search-button {
+.navbarSearchButton {
   display: inline-block;
   padding: 0.6em 1em;
   background-color: #bbb;
@@ -48,15 +47,15 @@
   cursor: pointer;
 }
 
-.navbar-search-button:hover {
+.navbarSearchButton:hover {
   opacity: 0.8;
 }
 
-.navbar-search-icon {
+.navbarSearchIcon {
   color: white;
 }
 
-.navbar-user {
+.navbarUser {
   display: inline-block;
   background-color: white;
   width: 2rem;
@@ -65,4 +64,6 @@
   line-height: 2rem;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  top: 0.5rem;
 }

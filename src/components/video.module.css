@@ -6,10 +6,10 @@
 .video {
   display: flex;
   align-items: center;
-  border: 1px solid darkgray;
+  border: 1px solid lightgray;
   cursor: pointer;
   transition: transform 250ms ease-in;
-  box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.38);
 }
 
 .video:hover {
@@ -26,9 +26,9 @@
 }
 
 .title {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .channel {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
