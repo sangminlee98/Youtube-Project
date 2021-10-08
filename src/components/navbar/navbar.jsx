@@ -7,7 +7,6 @@ const Navbar = (props) => {
     const onSubmit = (event) => {
         event.preventDefault();
         const query = inputRef.current.value;
-        console.log(query);
         formRef.current.reset();
         props.searchVideo(query);
     }
