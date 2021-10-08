@@ -10,6 +10,7 @@ const Navbar = (props) => {
         formRef.current.reset();
         props.searchVideo(query);
     }
+
     return (
         <nav className={styles.navbar}>
             <span className={styles.navbarTitle}>

@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color: hsl(0, 0%, 18.82%);
   padding: 1rem 1.5em;
   font-size: 1rem;
   width: 100%;
@@ -11,6 +11,7 @@
   display: inline-block;
   line-height: 2rem;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .navbarTitleName {
