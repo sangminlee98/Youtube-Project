@@ -8,10 +8,16 @@ import Video_detail from './components/video_detail/video_detail';
 function App({youtube}) {
   const [videos,setVideos] = useState([]);
   const [selectedVideo,setSelectedVideo] = useState(null);
+  const [loading,setLoading] = useState(false);
 
   const seacrhVideo = (query) => {
+    setSelectedVideo(null);
+    setLoading(true);
     youtube.search(query)
-    .then(result => setVideos(result));
+    .then(result => {
+      setVideos(result);
+      setLoading(false);
+    });
   }
   
   const selectVideo = (video) => {
@@ -31,7 +37,7 @@ function App({youtube}) {
           <Video_detail video={selectedVideo}/>
         </div>}
         <div className={styles.list}>
-          <Videos videos={videos} onVideoClick={selectVideo} display={selectedVideo? 'list' : 'grid'}/>
+          <Videos videos={videos} onVideoClick={selectVideo} display={selectedVideo? 'list' : 'grid'} loading={loading}/>
         </div>
       </section>
     </div> 
