@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react/cjs/react.production.min';
 import styles from './app.module.css';
 import Navbar from './components/navbar/navbar';
@@ -22,11 +22,18 @@ function App({youtube}) {
   
   const selectVideo = (video) => {
     setSelectedVideo(video);
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
   }
 
   useEffect(()=>{
+    setLoading(true);
     youtube.mostPopular()
-    .then(result => setVideos(result));
+    .then(result => {
+      setVideos(result);
+      setLoading(false)});
   },[]);
 
   return (
@@ -37,7 +44,13 @@ function App({youtube}) {
           <Video_detail video={selectedVideo}/>
         </div>}
         <div className={styles.list}>
-          <Videos videos={videos} onVideoClick={selectVideo} display={selectedVideo? 'list' : 'grid'} loading={loading}/>
+          {
+            loading === true ? 
+            <span className={styles.loading}>
+              <i className="fas fa-spinner fa-5x fa-spin"></i>
+            </span> :
+            <Videos videos={videos} onVideoClick={selectVideo} display={selectedVideo? 'list' : 'grid'}/>
+          }
         </div>
       </section>
     </div> 

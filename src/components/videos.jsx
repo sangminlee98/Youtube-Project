@@ -4,16 +4,9 @@ import styles from './videos.module.css';
 
 const Videos = ({videos, onVideoClick, display,loading}) => {
     return (
-        <>
+        <div className={styles.contaienr}>
             {
-                loading === true 
-                ? <>
-                    <div className={`${styles.spinner} fa-spin`}>
-                        <i class="fas fa-spinner"></i>
-                    </div>
-                    <p className={styles.loadingText}>Loading...</p>
-                </>
-                : <ul className={styles.videos}>
+                <ul className={styles.videos}>
                     {
                         videos.map(video=> {
                             return <Video
@@ -25,7 +18,7 @@ const Videos = ({videos, onVideoClick, display,loading}) => {
                     }
                 </ul> 
             }
-        </>
+        </div>
     )  
 };
 

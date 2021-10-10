@@ -1,15 +1,18 @@
-.app {
-  max-width: 80rem;
-}
-
-.content {
-  display: flex;
-}
-
 .detail {
   flex: 1 1 70%;
 }
 
 .list {
   flex: 1 1 30%;
+}
+
+.content {
+  display: flex;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
