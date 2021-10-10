@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react/cjs/react.production.min';
+import { useEffect, useState } from 'react';
 import styles from './app.module.css';
 import Navbar from './components/navbar/navbar';
 import Videos from './components/videos';
@@ -8,6 +7,7 @@ import Video_detail from './components/video_detail/video_detail';
 function App({youtube}) {
   const [videos,setVideos] = useState([]);
   const [selectedVideo,setSelectedVideo] = useState(null);
+  const [staticVideo,setStaticVideo] = useState(null);
   const [loading,setLoading] = useState(false);
 
   const seacrhVideo = (query) => {
@@ -26,6 +26,8 @@ function App({youtube}) {
       top:0,
       behavior:'smooth'
     })
+    const stId = selectVideo.id;
+    setStaticVideo()
   }
 
   useEffect(()=>{
