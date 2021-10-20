@@ -1,5 +1,6 @@
 import React, { useRef, memo } from 'react';
 import styles from './navbar.module.css';
+import logo from './logo.png';
 
 const Navbar = memo(
     (props) => {
@@ -11,11 +12,10 @@ const Navbar = memo(
             formRef.current.reset();
             props.searchVideo(query);
         }
-        console.log('header');
         return (
             <nav className={styles.navbar}>
                 <span className={styles.navbarTitle}>
-                    <img className={styles.navbarTitleIcon} src="/images/logo.png"></img>
+                    <img className={styles.navbarTitleIcon} src={logo}></img>
                     <span className={styles.navbarTitleName}>Youtube</span>
                 </span>
                 <form ref={formRef} className={styles.navbarSearch} onSubmit={onSubmit}>
