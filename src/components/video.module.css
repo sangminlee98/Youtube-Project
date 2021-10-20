@@ -30,12 +30,24 @@
 
 .metaData {
   margin-left: 0.3em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .title {
   font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .channel {
   font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 48rem) {
+  .grid {
+    width: 100%;
+  }
 }
