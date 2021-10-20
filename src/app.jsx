@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './app.module.css';
 import Navbar from './components/navbar/navbar';
 import Videos from './components/videos';
@@ -7,10 +7,10 @@ import Video_detail from './components/video_detail/video_detail';
 function App({youtube}) {
   const [videos,setVideos] = useState([]);
   const [selectedVideo,setSelectedVideo] = useState(null);
-  const [staticVideo,setStaticVideo] = useState(null);
   const [loading,setLoading] = useState(false);
 
-  const seacrhVideo = (query) => {
+  const seacrhVideo = useCallback(
+    (query) => {
     setSelectedVideo(null);
     setLoading(true);
     youtube.search(query)
@@ -18,7 +18,7 @@ function App({youtube}) {
       setVideos(result);
       setLoading(false);
     });
-  }
+  }, [youtube]);
   
   const selectVideo = (video) => {
     setSelectedVideo(video);
@@ -26,8 +26,6 @@ function App({youtube}) {
       top:0,
       behavior:'smooth'
     })
-    const stId = selectVideo.id;
-    setStaticVideo()
   }
 
   useEffect(()=>{
@@ -36,8 +34,7 @@ function App({youtube}) {
     .then(result => {
       setVideos(result);
       setLoading(false)});
-  },[]);
-
+  },[youtube]);
   return (
     <div className={styles.app}>
       <Navbar searchVideo={seacrhVideo}/>

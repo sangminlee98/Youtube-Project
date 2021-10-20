@@ -2,7 +2,7 @@ import React from 'react';
 import Video from './video';
 import styles from './videos.module.css';
 
-const Videos = ({videos, onVideoClick, display,loading}) => {
+const Videos = ({videos, onVideoClick, display}) => {
     return (
         <div className={styles.contaienr}>
             {
