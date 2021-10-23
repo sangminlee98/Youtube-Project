@@ -1,9 +1,11 @@
 import React, { useRef, memo } from 'react';
 import styles from './navbar.module.css';
 import logo from './logo.png';
+import { useHistory } from 'react-router-dom';
 
 const Navbar = memo(
     (props) => {
+        const history = useHistory();
         const inputRef = useRef();
         const formRef = useRef();
         const onSubmit = (event) => {
@@ -14,7 +16,9 @@ const Navbar = memo(
         }
         return (
             <nav className={styles.navbar}>
-                <span className={styles.navbarTitle}>
+                <span className={styles.navbarTitle} onClick={()=>{
+                    history.go(0);
+                }}>
                     <img className={styles.navbarTitleIcon} src={logo}></img>
                     <span className={styles.navbarTitleName}>Youtube</span>
                 </span>
