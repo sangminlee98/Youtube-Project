@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import styles from './app.module.css';
 import Navbar from './components/navbar/navbar';
-import Videos from './components/videos';
+import Videos from './components/video/videos';
 import Video_detail from './components/video_detail/video_detail';
 
 function App({youtube}) {

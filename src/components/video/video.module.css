@@ -19,7 +19,7 @@
 
 .list .title {
   font-size: 1rem;
-  width: 250px;
+  width: 12rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -39,14 +39,11 @@
 }
 
 .thumbnail {
-  flex-grow: 4;
   width: 40%;
   height: 100%;
 }
 
 .metaData {
-  position: relative;
-  flex-grow: 6;
   margin-left: 0.3em;
   overflow: hidden;
 }
